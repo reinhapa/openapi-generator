@@ -51,7 +51,7 @@ open class MetaTask : DefaultTask() {
     val packageName = project.objects.property<String>()
 
     @get:OutputDirectory
-    val outputFolder = project.objects.property<String>()
+    val outputFolder = project.objects.directoryProperty()
 
     @TaskAction
     fun doWork() {

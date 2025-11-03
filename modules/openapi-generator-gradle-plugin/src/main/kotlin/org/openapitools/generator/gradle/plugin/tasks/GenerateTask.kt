@@ -86,14 +86,14 @@ open class GenerateTask @Inject constructor(private val objectFactory: ObjectFac
     @get:Optional
     @get:InputDirectory
     @get:PathSensitive(PathSensitivity.ABSOLUTE)
-    val schemaLocation = project.objects.property<String>()
+    val schemaLocation = project.objects.directoryProperty()
 
     /**
      * The output target directory into which code will be generated.
      */
     @get:Optional
     @get:OutputDirectory
-    val outputDir = project.objects.property<String>()
+    val outputDir = project.objects.directoryProperty()
 
     @Suppress("unused")
     @set:Option(option = "input", description = "The input specification.")
@@ -113,7 +113,7 @@ open class GenerateTask @Inject constructor(private val objectFactory: ObjectFac
     @get:Optional
     @get:InputFile
     @get:PathSensitive(PathSensitivity.RELATIVE)
-    val inputSpec = project.objects.property<String>()
+    val inputSpec = project.objects.fileProperty()
 
     /**
      * Local root folder with spec files.
@@ -124,7 +124,7 @@ open class GenerateTask @Inject constructor(private val objectFactory: ObjectFac
     @get:Optional
     @get:InputDirectory
     @get:PathSensitive(PathSensitivity.RELATIVE)
-    val inputSpecRootDirectory = project.objects.property<String>();
+    val inputSpecRootDirectory = project.objects.directoryProperty()
 
     /**
      * Skip bundling all spec files into a merged spec file, if true.
@@ -153,7 +153,7 @@ open class GenerateTask @Inject constructor(private val objectFactory: ObjectFac
     @get:Optional
     @get:InputDirectory
     @get:PathSensitive(PathSensitivity.RELATIVE)
-    val templateDir = project.objects.property<String>()
+    val templateDir = project.objects.directoryProperty()
 
     /**
      * Resource path containing template files.
@@ -185,7 +185,7 @@ open class GenerateTask @Inject constructor(private val objectFactory: ObjectFac
     @get:Optional
     @get:InputFile
     @get:PathSensitive(PathSensitivity.RELATIVE)
-    val configFile = project.objects.property<String>()
+    val configFile = project.objects.fileProperty()
 
     /**
      * Specifies if the existing files should be overwritten during the generation.
@@ -433,7 +433,7 @@ open class GenerateTask @Inject constructor(private val objectFactory: ObjectFac
     @get:Optional
     @get:InputFile
     @get:PathSensitive(PathSensitivity.RELATIVE)
-    val ignoreFileOverride = project.objects.property<String>()
+    val ignoreFileOverride = project.objects.fileProperty()
 
     /**
      * Remove prefix of operationId, e.g. config_getId => getId

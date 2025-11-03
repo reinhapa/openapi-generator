@@ -56,7 +56,7 @@ import org.openapitools.codegen.validations.oas.RuleConfiguration
 open class ValidateTask : DefaultTask() {
     @get:InputFile
     @get:PathSensitive(PathSensitivity.RELATIVE)
-    val inputSpec = project.objects.property<String>()
+    val inputSpec = project.objects.fileProperty()
 
     @get:Optional
     @get:Input
